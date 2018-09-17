@@ -17,6 +17,14 @@ page-user {
         -webkit-box-shadow: 5px -9px 3px #000;
         box-shadow: 0px -1px 1px #000;
     }
+    div.quadro-dados {
+        width: 280px;
+        height: 100px;
+        background: #ff3366;
+        position: absolute;
+        left: 40px;
+        top: 300px;
+    }
 
     h1.nome {
         position: absolute;
@@ -30,52 +38,47 @@ page-user {
         top: 50%;
         left: 20%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
     }
 
     p.info-dados1{
         position: absolute;
-        top: 70%;
+        top: 60%;
         left: 20%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
     }
 
-    h2.dados2 {
-        position: fixed;
+    h3.dados2 {
+        position: absolute;
         top: 31%;
         left: 50%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
     }
 
     p.info-dados2{
         position: absolute;
-        top: 70%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
     }
 
-    h2.dados3{
+    h4.dados3{
         position: absolute;
+        font-size: 22px;
         top: 31%;
         left: 80%;
         transform: translate(-50%, -50%);
+        color: #ffffff;
     }
 
     p.info-dados3{
         position: absolute;
-        top: 70%;
+        top: 60%;
         left: 80%;
         transform: translate(-50%, -50%);
-    }
-
-    div.quadro-dados {
-        width: 280px;
-        height: 100px;
-        background: #ff3366;
-        position: absolute;
-        left: 40px;
-        top: 300px;
-    }
-
-
-            
+        color: #ffffff;
+    }            
 }
