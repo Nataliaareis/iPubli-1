@@ -1,0 +1,81 @@
+page-user {
+    div.foto {
+        width: 200px;
+        height: 250px;
+        background: #66BB92;
+        position: absolute;
+        left: 80px;
+        top: 30px;
+    }
+    div.quadro-nome {
+        width: 240px;
+        height: 90px;
+        background: #bdb6b8;
+        position: absolute;
+        left: 60px;
+        top: 225px;
+        -webkit-box-shadow: 5px -9px 3px #000;
+        box-shadow: 0px -1px 1px #000;
+    }
+
+    h1.nome {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2.dados1 {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    p.info-dados1{
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2.dados2 {
+        position: fixed;
+        top: 31%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    p.info-dados2{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2.dados3{
+        position: absolute;
+        top: 31%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    p.info-dados3{
+        position: absolute;
+        top: 70%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    div.quadro-dados {
+        width: 280px;
+        height: 100px;
+        background: #ff3366;
+        position: absolute;
+        left: 40px;
+        top: 300px;
+    }
+
+
+            
+}
