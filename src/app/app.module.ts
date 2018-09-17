@@ -12,6 +12,7 @@ import { UserPage } from '../pages/user/user';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserPageModule } from '../pages/user/user.module';
+import { SignupPageModule } from '../pages/signup/signup.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UserPageModule } from '../pages/user/user.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    UserPageModule
+    UserPageModule,
+    SignupPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
