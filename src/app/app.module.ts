@@ -8,11 +8,14 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
+import { HidePage } from '../pages/hide/hide';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserPageModule } from '../pages/user/user.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
+import { SignupEmpresaPageModule } from '../pages/signup-empresa/signup-empresa.module';
+import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
 
 
 @NgModule({
@@ -21,13 +24,15 @@ import { SignupPageModule } from '../pages/signup/signup.module';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    HidePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     UserPageModule,
-    SignupPageModule
+    SignupPageModule,
+    SignupEmpresaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +41,8 @@ import { SignupPageModule } from '../pages/signup/signup.module';
     ContactPage,
     HomePage,
     TabsPage,
-    UserPage
+    UserPage,
+    HidePage
   ],
   providers: [
     StatusBar,

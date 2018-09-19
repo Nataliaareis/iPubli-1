@@ -1,11 +1,13 @@
 page-user {
     div.foto {
-        width: 200px;
-        height: 250px;
+        min-width: 200px;
+        min-height: 250px;
+        max-width: 500px; 
+        max-height: 550px;
         background: #66BB92;
         position: absolute;
-        left: 80px;
-        top: 30px;
+        left: 22%;
+        top: 8%;
     }
     div.quadro-nome {
         width: 240px;

@@ -1,0 +1,38 @@
+<!--
+  Generated template for the HidePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Hide</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <p>Telas</p>
+    <a (click)="goToSignupPage()">Signup\n</a><br>
+    <a (click)="goToSignupEmpresaPage()">Signup Empresa</a><br>
+  </div>
+</ion-content>
+
+<!--
+Para adicionar um novo link na pagina, faça:
+1 - adicionar essa linha em "hide.html" alterando XYZ pelo nome da pagina:
+      <a (click)="goToXYZPage()">XYZ</a><br>
+
+2 - adicionar essa função em "hide.ts" alterando XYZ pelo nome da pagina:
+      goToXYZPage(){
+        this.navCtrl.push(XYZPage)
+      }
+
+3 -  adicionar essa linha em "app.module.ts", na parte dos "imports" alterando XYZ pelo nome da pagina:
+      XYZPageModule
+
+OBS: Não esqueça de fazer os imports
+-->
