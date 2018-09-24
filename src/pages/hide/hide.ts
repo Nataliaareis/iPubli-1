@@ -5,6 +5,8 @@ import { SignupPage } from '../signup/signup';
 import { SignupEmpresaPage } from '../signup-empresa/signup-empresa';
 import { EmpresaHomePage } from '../empresa-home/empresa-home';
 import { EmpresaInfluencersPage } from '../empresa-influencers/empresa-influencers';
+import { FavoritosPastaPage } from '../favoritos-pasta/favoritos-pasta';
+import { FavoritosPage } from '../favoritos/favoritos';
 
 /**
  * Generated class for the HidePage page.
@@ -41,4 +43,13 @@ export class HidePage {
   goToEmpresaInfluencersPage(){
     this.navCtrl.push(EmpresaInfluencersPage)
   }
+
+  goToFavoritosPage(){
+    this.navCtrl.push(FavoritosPage)
+  }
+
+  goToFavoritosPastaPage(){
+    this.navCtrl.push(FavoritosPastaPage)
+  }
+
 }

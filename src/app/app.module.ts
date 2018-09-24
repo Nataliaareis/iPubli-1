@@ -18,6 +18,8 @@ import { SignupEmpresaPageModule } from '../pages/signup-empresa/signup-empresa.
 import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
 import { EmpresaHomePageModule } from '../pages/empresa-home/empresa-home.module';
 import { EmpresaInfluencersPageModule } from '../pages/empresa-influencers/empresa-influencers.module';
+import { FavoritosPageModule } from '../pages/favoritos/favoritos.module';
+import { FavoritosPastaPageModule } from '../pages/favoritos-pasta/favoritos-pasta.module';
 
 
 @NgModule({
@@ -36,7 +38,10 @@ import { EmpresaInfluencersPageModule } from '../pages/empresa-influencers/empre
     SignupPageModule,
     SignupEmpresaPageModule,
     EmpresaHomePageModule,
-    EmpresaInfluencersPageModule
+    EmpresaInfluencersPageModule,
+    FavoritosPageModule,
+    FavoritosPastaPageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
