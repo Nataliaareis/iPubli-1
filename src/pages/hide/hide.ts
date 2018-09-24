@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
 import { SignupEmpresaPage } from '../signup-empresa/signup-empresa';
+import { EmpresaHomePage } from '../empresa-home/empresa-home';
+import { EmpresaInfluencersPage } from '../empresa-influencers/empresa-influencers';
 
 /**
  * Generated class for the HidePage page.
@@ -32,5 +34,11 @@ export class HidePage {
     this.navCtrl.push(SignupEmpresaPage)
   }
 
+  goToEmpresaHomePage(){
+    this.navCtrl.push(EmpresaHomePage)
+  }
 
+  goToEmpresaInfluencersPage(){
+    this.navCtrl.push(EmpresaInfluencersPage)
+  }
 }

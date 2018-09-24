@@ -16,6 +16,8 @@ import { UserPageModule } from '../pages/user/user.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { SignupEmpresaPageModule } from '../pages/signup-empresa/signup-empresa.module';
 import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
+import { EmpresaHomePageModule } from '../pages/empresa-home/empresa-home.module';
+import { EmpresaInfluencersPageModule } from '../pages/empresa-influencers/empresa-influencers.module';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
     IonicModule.forRoot(MyApp),
     UserPageModule,
     SignupPageModule,
-    SignupEmpresaPageModule
+    SignupEmpresaPageModule,
+    EmpresaHomePageModule,
+    EmpresaInfluencersPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
