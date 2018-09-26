@@ -8,6 +8,11 @@ import { EmpresaInfluencersPage } from '../empresa-influencers/empresa-influence
 import { FavoritosPastaPage } from '../favoritos-pasta/favoritos-pasta';
 import { FavoritosPage } from '../favoritos/favoritos';
 
+import { EmpresaPerfilPage } from '../empresa-perfil/empresa-perfil';
+import { EmpresaProdutosPage } from '../empresa-produtos/empresa-produtos';
+import { FeedUsuarioPage } from '../feed-usuario/feed-usuario';
+
+
 /**
  * Generated class for the HidePage page.
  *
@@ -50,6 +55,18 @@ export class HidePage {
 
   goToFavoritosPastaPage(){
     this.navCtrl.push(FavoritosPastaPage)
+  }
+
+  goToEmpresaPerfilPage(){
+    this.navCtrl.push(EmpresaPerfilPage)
+  }
+
+  goToEmpresaProdutosPage(){
+    this.navCtrl.push(EmpresaProdutosPage)
+  }
+
+  goToFeedUsuarioPage(){
+    this.navCtrl.push(FeedUsuarioPage)
   }
 
 }
