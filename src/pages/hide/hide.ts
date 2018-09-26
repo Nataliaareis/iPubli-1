@@ -52,10 +52,9 @@ export class HidePage {
     this.navCtrl.push(TelaLoginPage)
   }
 
-<<<<<<< HEAD
   goToTelaProdutoPage(){
     this.navCtrl.push(TelaProdutoPage)
-=======
+  }
   goToEmpresaHomePage(){
     this.navCtrl.push(EmpresaHomePage)
   }
@@ -82,7 +81,6 @@ export class HidePage {
 
   goToFeedUsuarioPage(){
     this.navCtrl.push(FeedUsuarioPage)
->>>>>>> 46c3ebf09d965a0e511c552f8c24f903c9439b25
   }
 
 }

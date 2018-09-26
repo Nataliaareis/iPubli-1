@@ -46,11 +46,9 @@ import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
-<<<<<<< HEAD
     DescricaoProdutoPageModule,
     TelaLoginPageModule,
-    TelaProdutoPageModule
-=======
+    TelaProdutoPageModule,
     EmpresaHomePageModule,
     EmpresaInfluencersPageModule,
     FavoritosPageModule,
@@ -58,7 +56,6 @@ import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module
     EmpresaPerfilPageModule,
     EmpresaProdutosPageModule,
     FeedUsuarioPageModule
->>>>>>> 46c3ebf09d965a0e511c552f8c24f903c9439b25
   ],
   bootstrap: [IonicApp],
   entryComponents: [
