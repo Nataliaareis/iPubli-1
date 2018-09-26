@@ -14,6 +14,7 @@ import { FavoritosPage } from '../favoritos/favoritos';
 import { EmpresaPerfilPage } from '../empresa-perfil/empresa-perfil';
 import { EmpresaProdutosPage } from '../empresa-produtos/empresa-produtos';
 import { FeedUsuarioPage } from '../feed-usuario/feed-usuario';
+import { TelaConfiguracoesPage } from '../tela-configuracoes/tela-configuracoes';
 
 
 /**
@@ -81,6 +82,10 @@ export class HidePage {
 
   goToFeedUsuarioPage(){
     this.navCtrl.push(FeedUsuarioPage)
+  }
+
+  goToTelaConfiguracoesPage(){
+    this.navCtrl.push(TelaConfiguracoesPage)
   }
 
 }

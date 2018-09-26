@@ -28,6 +28,7 @@ import { FavoritosPastaPageModule } from '../pages/favoritos-pasta/favoritos-pas
 import { EmpresaPerfilPageModule } from '../pages/empresa-perfil/empresa-perfil.module';
 import { EmpresaProdutosPageModule } from '../pages/empresa-produtos/empresa-produtos.module';
 import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module';
+import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-configuracoes.module';
 
 
 
@@ -55,7 +56,8 @@ import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module
     FavoritosPastaPageModule,
     EmpresaPerfilPageModule,
     EmpresaProdutosPageModule,
-    FeedUsuarioPageModule
+    FeedUsuarioPageModule,
+    TelaConfiguracoesPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
