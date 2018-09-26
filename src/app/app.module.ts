@@ -20,6 +20,15 @@ import { DescricaoProdutoPage } from '../pages/descricao-produto/descricao-produ
 import { DescricaoProdutoPageModule } from '../pages/descricao-produto/descricao-produto.module';
 import { TelaLoginPageModule } from '../pages/tela-login/tela-login.module';
 import { TelaProdutoPageModule } from '../pages/tela-produto/tela-produto.module';
+import { EmpresaHomePageModule } from '../pages/empresa-home/empresa-home.module';
+import { EmpresaInfluencersPageModule } from '../pages/empresa-influencers/empresa-influencers.module';
+import { FavoritosPageModule } from '../pages/favoritos/favoritos.module';
+import { FavoritosPastaPageModule } from '../pages/favoritos-pasta/favoritos-pasta.module';
+
+import { EmpresaPerfilPageModule } from '../pages/empresa-perfil/empresa-perfil.module';
+import { EmpresaProdutosPageModule } from '../pages/empresa-produtos/empresa-produtos.module';
+import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module';
+
 
 
 @NgModule({
@@ -37,9 +46,19 @@ import { TelaProdutoPageModule } from '../pages/tela-produto/tela-produto.module
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
+<<<<<<< HEAD
     DescricaoProdutoPageModule,
     TelaLoginPageModule,
     TelaProdutoPageModule
+=======
+    EmpresaHomePageModule,
+    EmpresaInfluencersPageModule,
+    FavoritosPageModule,
+    FavoritosPastaPageModule,
+    EmpresaPerfilPageModule,
+    EmpresaProdutosPageModule,
+    FeedUsuarioPageModule
+>>>>>>> 46c3ebf09d965a0e511c552f8c24f903c9439b25
   ],
   bootstrap: [IonicApp],
   entryComponents: [

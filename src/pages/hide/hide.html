@@ -21,6 +21,13 @@
     <a (click)="goToDescricaoProdutoPage()">Descricao</a><br>
     <a (click)="goToTelaLoginPage()">Login</a><br>
     <a (click)="goToTelaProdutoPage()">Tela Produto</a><br>
+    <a (click)="goToEmpresaHomePage()">Empresa Home</a><br>
+    <a (click)="goToEmpresaInfluencersPage()">Empresa Influencers Sugeridos</a><br>
+    <a (click)="goToFavoritosPage()">Favoritos</a><br>
+    <a (click)="goToFavoritosPastaPage()">Favoritos Exemplo Pasta (também linkado na página acima)</a><br>
+    <a (click)="goToEmpresaPerfilPage()">EmpresaPerfil</a><br>
+	  <a (click)="goToEmpresaProdutosPage()">EmpresaProdutos</a><br>
+	  <a (click)="goToFeedUsuarioPage()">FeedUsuario</a><br>
   </div>
 </ion-content>
 
@@ -38,4 +45,7 @@ Para adicionar um novo link na pagina, faça:
       XYZPageModule
 
 OBS: Não esqueça de fazer os imports
+***OBS2: Fazer os imports em "hide.ts"
+****OBS3: Tem dois imports que tem que ser preenchidos no "app.module.ts". 
+              Um no começo e o outro no final do arquivo (se não fizer os dois não irá funcionar)
 -->
