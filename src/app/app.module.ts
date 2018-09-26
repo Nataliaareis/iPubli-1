@@ -16,6 +16,10 @@ import { UserPageModule } from '../pages/user/user.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { SignupEmpresaPageModule } from '../pages/signup-empresa/signup-empresa.module';
 import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
+import { DescricaoProdutoPage } from '../pages/descricao-produto/descricao-produto';
+import { DescricaoProdutoPageModule } from '../pages/descricao-produto/descricao-produto.module';
+import { TelaLoginPageModule } from '../pages/tela-login/tela-login.module';
+import { TelaProdutoPageModule } from '../pages/tela-produto/tela-produto.module';
 
 
 @NgModule({
@@ -32,7 +36,10 @@ import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
     IonicModule.forRoot(MyApp),
     UserPageModule,
     SignupPageModule,
-    SignupEmpresaPageModule
+    SignupEmpresaPageModule,
+    DescricaoProdutoPageModule,
+    TelaLoginPageModule,
+    TelaProdutoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

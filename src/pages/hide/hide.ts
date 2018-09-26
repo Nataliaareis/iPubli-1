@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
 import { SignupEmpresaPage } from '../signup-empresa/signup-empresa';
+import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto';
+import { TelaLoginPage } from '../tela-login/tela-login';
+import { TelaProdutoPage } from '../tela-produto/tela-produto';
 
 /**
  * Generated class for the HidePage page.
@@ -31,6 +34,17 @@ export class HidePage {
   goToSignupEmpresaPage(){
     this.navCtrl.push(SignupEmpresaPage)
   }
+ 
+  goToDescricaoProdutoPage(){
+    this.navCtrl.push(DescricaoProdutoPage)
+  }
 
+  goToTelaLoginPage(){
+    this.navCtrl.push(TelaLoginPage)
+  }
+
+  goToTelaProdutoPage(){
+    this.navCtrl.push(TelaProdutoPage)
+  }
 
 }
