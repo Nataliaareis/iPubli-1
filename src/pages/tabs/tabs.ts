@@ -6,6 +6,8 @@ import { HomePage } from '../home/home';
 import { UserPage } from '../user/user';
 import { SignupPage } from '../signup/signup';
 import { HidePage } from '../hide/hide';
+import { FavoritosPage } from '../favoritos/favoritos';
+import { FeedUsuarioPage } from '../feed-usuario/feed-usuario';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -13,8 +15,8 @@ import { HidePage } from '../hide/hide';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab2Root = FeedUsuarioPage;
+  tab3Root = FavoritosPage;
   tab4Root = UserPage;
   tab5Root = HidePage;
 
