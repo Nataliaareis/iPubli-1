@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
 
 /**
  * Generated class for the TelaProdutoPage page.
@@ -20,6 +21,10 @@ export class TelaProdutoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TelaProdutoPage');
+  }
+
+  goToDescricaoProdutoPage(){
+    this.navCtrl.push(DescricaoProdutoPage)
   }
 
 }

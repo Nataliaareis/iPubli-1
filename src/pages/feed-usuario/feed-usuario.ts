@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TelaProdutoPage } from '../tela-produto/tela-produto';
+import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
 /**
  * Generated class for the FeedUsuarioPage page.
  *
@@ -21,4 +23,11 @@ export class FeedUsuarioPage {
     console.log('ionViewDidLoad FeedUsuarioPage');
   }
 
+  goToTelaProdutoPage(){
+    this.navCtrl.push(TelaProdutoPage)
+  }
+
+  goToDescricaoProdutoPage(){
+    this.navCtrl.push(DescricaoProdutoPage)
+  }
 }
