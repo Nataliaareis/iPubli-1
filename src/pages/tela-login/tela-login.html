@@ -29,7 +29,8 @@
     <ion-input type="password"></ion-input>
   </ion-item>
 
-  <button ion-button full color="dark">Fazer Login</button>
-  <button ion-button small color = "dark" > Não tem um conta? Cadastra-se</button>
+  <button ion-button (click) = "goToHomePage()" full color="dark" >Fazer Login</button>
+
+  <button ion-button (click) = "goToCadastroEscolhaPage()" small color = "dark" > Não tem um conta? Cadastra-se</button>
 
 </ion-content>

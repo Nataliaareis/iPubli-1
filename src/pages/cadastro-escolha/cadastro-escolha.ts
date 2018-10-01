@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
-import { HomePage  } from '../home/home';
-import { CadastroEscolhaPage } from '../cadastro-escolha/cadastro-escolha';
-/**
- * Generated class for the TelaLoginPage page.
+import { SignupEmpresaPage } from '../signup-empresa/signup-empresa';
+
+ /**
+ * Generated class for the CadastroEscolhaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,28 +12,24 @@ import { CadastroEscolhaPage } from '../cadastro-escolha/cadastro-escolha';
 
 @IonicPage()
 @Component({
-  selector: 'page-tela-login',
-  templateUrl: 'tela-login.html',
+  selector: 'page-cadastro-escolha',
+  templateUrl: 'cadastro-escolha.html',
 })
-export class TelaLoginPage {
+export class CadastroEscolhaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TelaLoginPage');
+    console.log('ionViewDidLoad CadastroEscolhaPage');
   }
 
   goToSignupPage(){
     this.navCtrl.push(SignupPage)
   }
 
-  goToHomePage(){
-    this.navCtrl.push(HomePage)
-  }
-
-  goToCadastroEscolhaPage(){
-    this.navCtrl.push(CadastroEscolhaPage)
+  goToSignupEmpresaPage(){
+    this.navCtrl.push(SignupEmpresaPage)
   }
 
 }

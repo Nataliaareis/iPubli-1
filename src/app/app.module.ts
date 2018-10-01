@@ -15,8 +15,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserPageModule } from '../pages/user/user.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { SignupEmpresaPageModule } from '../pages/signup-empresa/signup-empresa.module';
-import { SignupEmpresaPage } from '../pages/signup-empresa/signup-empresa';
-import { DescricaoProdutoPage } from '../pages/descricao-produto/descricao-produto';
 import { DescricaoProdutoPageModule } from '../pages/descricao-produto/descricao-produto.module';
 import { TelaLoginPageModule } from '../pages/tela-login/tela-login.module';
 import { TelaProdutoPageModule } from '../pages/tela-produto/tela-produto.module';
@@ -29,8 +27,13 @@ import { EmpresaPerfilPageModule } from '../pages/empresa-perfil/empresa-perfil.
 import { EmpresaProdutosPageModule } from '../pages/empresa-produtos/empresa-produtos.module';
 import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module';
 import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-configuracoes.module';
+<<<<<<< HEAD
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { HttpClientModule } from '@angular/common/http';
+=======
+import { CadastroEscolhaPage } from '../pages/cadastro-escolha/cadastro-escolha';
+import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-escolha.module';
+>>>>>>> 4b2019fed0e6b67792a3c05cab8d7f2845680a54
 
 
 
@@ -60,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     EmpresaPerfilPageModule,
     EmpresaProdutosPageModule,
     FeedUsuarioPageModule,
-    TelaConfiguracoesPageModule
+    TelaConfiguracoesPageModule,
+    CadastroEscolhaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
