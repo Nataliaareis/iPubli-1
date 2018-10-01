@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Upload</h2>
+  <p>
+    <button ion-button color="dark" outline>Procurar Imagem</button>
+  </p>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label fixed>Produto:</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Influencer:</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Data:</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Link:</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+  <p>
+    <button ion-button color="danger" full>Adicionar </button>
+  </p>
+</ion-content>
