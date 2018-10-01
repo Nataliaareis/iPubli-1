@@ -29,6 +29,8 @@ import { EmpresaPerfilPageModule } from '../pages/empresa-perfil/empresa-perfil.
 import { EmpresaProdutosPageModule } from '../pages/empresa-produtos/empresa-produtos.module';
 import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module';
 import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-configuracoes.module';
+import { ProdutosProvider } from '../providers/produtos/produtos';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -44,6 +46,7 @@ import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-co
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
@@ -72,7 +75,8 @@ import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-co
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProdutosProvider
   ]
 })
 export class AppModule {}
