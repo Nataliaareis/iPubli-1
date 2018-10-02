@@ -16,30 +16,16 @@
 <ion-content padding>
   
 
-  <ion-card>
+  <ion-card *ngFor = "let produto of lista_produtos">
     <ion-item>
       <ion-avatar item-start>
         <img src="../assets/imgs/feed_exemplo_01.jpg">
       </ion-avatar>
-      <h2>Audrey Hepburn</h2>
-      <p>Dior</p>
+      <h2>{{ produto.user.username }}</h2>
+      <p>{{ produto.location }}</p>
     </ion-item>
   
-    <img (click) = "goToTelaProdutoPage()" src = "../assets/imgs/feed_exemplo_02.jpg">
+    <img [src]= "produto.images.standard_resolution.url">
   </ion-card>
-
-
-  <ion-card>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../assets/imgs/feed_exemplo_01.jpg">
-      </ion-avatar>
-      <h2>Audrey Hepburn</h2>
-      <p>Dior</p>
-    </ion-item>
-  
-    <img src="../assets/imgs/feed_exemplo_03.jpg">
-  </ion-card>
-
 
 </ion-content>

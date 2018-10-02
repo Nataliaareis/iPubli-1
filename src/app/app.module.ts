@@ -29,6 +29,8 @@ import { FeedUsuarioPageModule } from '../pages/feed-usuario/feed-usuario.module
 import { TelaConfiguracoesPageModule } from '../pages/tela-configuracoes/tela-configuracoes.module';
 import { CadastroEscolhaPage } from '../pages/cadastro-escolha/cadastro-escolha';
 import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-escolha.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ProdutosProvider } from '../providers/produtos/produtos';
 
 
 
@@ -44,6 +46,7 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
@@ -73,7 +76,8 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProdutosProvider
   ]
 })
 export class AppModule {}
