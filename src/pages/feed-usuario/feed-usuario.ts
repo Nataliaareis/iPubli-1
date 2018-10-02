@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-<<<<<<< HEAD
 import { ProdutosProvider } from '../../providers/produtos/produtos';
 
-=======
 import { TelaProdutoPage } from '../tela-produto/tela-produto';
 import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
->>>>>>> 4b2019fed0e6b67792a3c05cab8d7f2845680a54
 /**
  * Generated class for the FeedUsuarioPage page.
  *
@@ -36,8 +33,8 @@ export class FeedUsuarioPage {
     this.produtosProvider.getImageProductsByTag().subscribe(
       data=>{
         const response = (data as any);
-        this.lista_produtos = response.result;
-        console.log(data);
+        this.lista_produtos = response.data;
+        console.log(this.lista_produtos);
       }, error =>{
         console.log(error);
       }
