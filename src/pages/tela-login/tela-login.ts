@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { HomePage  } from '../home/home';
 import { CadastroEscolhaPage } from '../cadastro-escolha/cadastro-escolha';
+import { EmpresaHomePage } from '../empresa-home/empresa-home';
+
 /**
  * Generated class for the TelaLoginPage page.
  *
@@ -35,5 +37,11 @@ export class TelaLoginPage {
   goToCadastroEscolhaPage(){
     this.navCtrl.push(CadastroEscolhaPage)
   }
+
+  goToEmpresaHomePage(){
+    this.navCtrl.push(EmpresaHomePage)
+  }
+
+  
 
 }
