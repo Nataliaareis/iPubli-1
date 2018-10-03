@@ -32,6 +32,7 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 
+import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ProdutosProvider } from '../providers/produtos/produtos';
     EmpresaProdutosPageModule,
     FeedUsuarioPageModule,
     TelaConfiguracoesPageModule,
-    CadastroEscolhaPageModule
+    CadastroEscolhaPageModule,
+    TelaUploadPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

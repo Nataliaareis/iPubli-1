@@ -16,6 +16,8 @@ import { EmpresaProdutosPage } from '../empresa-produtos/empresa-produtos';
 import { FeedUsuarioPage } from '../feed-usuario/feed-usuario';
 import { TelaConfiguracoesPage } from '../tela-configuracoes/tela-configuracoes';
 
+import { TelaUploadPage } from '../tela-upload/tela-upload';
+
 
 /**
  * Generated class for the HidePage page.
@@ -86,6 +88,10 @@ export class HidePage {
 
   goToTelaConfiguracoesPage(){
     this.navCtrl.push(TelaConfiguracoesPage)
+  }
+
+  goToTelaUploadPage(){
+    this.navCtrl.push(TelaUploadPage)
   }
 
 }
