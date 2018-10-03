@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EmpresaInfluencersPage } from '../empresa-influencers/empresa-influencers'
+import { TelaConfiguracoesPage } from '../tela-configuracoes/tela-configuracoes'
 
 /**
  * Generated class for the EmpresaHomePage page.
@@ -22,4 +24,12 @@ export class EmpresaHomePage {
     console.log('ionViewDidLoad EmpresaHomePage');
   }
 
+  goToEmpresaInfluencersPage(){
+    this.navCtrl.push(EmpresaInfluencersPage)
+  }
+
+  goToTelaConfiguracoesPage(){
+    this.navCtrl.push(TelaConfiguracoesPage)
+  }
+  
 }
