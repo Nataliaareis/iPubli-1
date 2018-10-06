@@ -2,9 +2,46 @@ page-tela-login {
     button.button.button-md.button-default.button-default-md.button-full.button-full-md.button-md-dark {
         background-color: #ff2c68;
     }
+    
     button.disable-hover.button.button-md.button-default.button-default-md.button-small.button-small-md.button-md-dark {
         background-color: #fff;
         color: #000;
+        box-shadow: #fff;
+        border-style: none;
+    }
+
+    ion-card img {
+        display: block;
+        margin-top: 5%;
+        width: 40%;
+        height: 60%;
+        left: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-md {
+        margin: 0px;
+        width: 50%;
+        height: 20%;
+        font-size: 3rem;
+        background: #fff;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: none;
+    }
+
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #000;
+    }
+
+    .label-md[stacked] {
+        font-size: 1.5rem;
+    }
+
+    .botaocadastro{
+        
     }
 }
 
