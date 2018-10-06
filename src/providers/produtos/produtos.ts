@@ -12,13 +12,14 @@ export class ProdutosProvider {
 
   private baseApiPath = "https://api.instagram.com/v1";
   private tag = "ipubli1"
+  private accessTK = "/?access_token=";
 
   constructor(public http: HttpClient) {
     console.log('Hello ProdutosProvider Provider');
   }
 
   getImageProductsByTag(){
-    return this.http.get(this.baseApiPath + "/tags/" + this.tag + "/media/recent/?access_token=" + this.getApiKey());
+    return this.http.get(this.baseApiPath + "/tags/" + this.tag + "/media/recent"+ this.accessTK + this.getApiKey());
   }
 
   getApiKey(): string{

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
+import { ProdutosProvider } from '../../providers/produtos/produtos';
 
 /**
  * Generated class for the TelaProdutoPage page.
@@ -16,15 +17,24 @@ import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
 })
 export class TelaProdutoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public produto;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public produtosProvider: ProdutosProvider) {
+    this.produto = navParams.get("parametro");
+    console.log(this.produto);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TelaProdutoPage');
   }
 
-  goToDescricaoProdutoPage(){
-    this.navCtrl.push(DescricaoProdutoPage)
+  goToDescricaoProdutoPage(produto){
+    this.navCtrl.push(DescricaoProdutoPage,{
+      parametro: produto
+    })
   }
 
 }

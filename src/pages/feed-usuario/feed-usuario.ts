@@ -42,11 +42,10 @@ export class FeedUsuarioPage {
 
   }
 
-  goToTelaProdutoPage(){
-    this.navCtrl.push(TelaProdutoPage)
-  }
-
-  goToDescricaoProdutoPage(){
-    this.navCtrl.push(DescricaoProdutoPage)
+  goToTelaProdutoPage(produto){
+    console.log();
+    this.navCtrl.push(TelaProdutoPage, {
+      parametro: produto
+    })
   }
 }

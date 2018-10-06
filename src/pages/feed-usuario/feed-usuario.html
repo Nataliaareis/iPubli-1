@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Feed_Usuario</ion-title>
+    <ion-title>Feed Usuario</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,7 +25,7 @@
       <p>{{ produto.location }}</p>
     </ion-item>
   
-    <img (click) = "goToTelaProdutoPage()" [src]= "produto.images.standard_resolution.url">
+    <img (click) = "goToTelaProdutoPage(produto)" [src]= "produto.images.standard_resolution.url">
   </ion-card>
 
 </ion-content>
