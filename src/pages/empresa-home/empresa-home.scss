@@ -20,22 +20,19 @@ page-empresa-home {
   background: #fff;
   }
 
-.btnHome
-{
-  height: 40%;
+.btnHome{
+  height: 20%;
   margin: 10px;
   border-radius: 2px;
   width: calc((100% - 50px)/2);
   background: #ff3366;
 }
 
-.conteudo
-{
+.conteudo{
   margin-top: 20px;
 }
 
 .card-background-page {
-
     ion-card {
       position: relative;
       text-align: center;
