@@ -15,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DescricaoProdutoPage {
 
+  public produto;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.produto = navParams.get("parametro");
+    console.log(this.produto);
   }
 
   ionViewDidLoad() {
