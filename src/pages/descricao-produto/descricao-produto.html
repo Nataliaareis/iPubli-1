@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-item style="color: #ff2c68"> <b>Link do Instagram</b> </ion-item>
-  <ion-item text-wrap > {{ produto.link }} </ion-item>
+  <ion-item text-wrap (click)="openWebPage(produto.link)"> {{ produto.link }} </ion-item>
   <br>
 
   <ion-item style="color: #ff2c68"> <b>Marca</b> </ion-item>

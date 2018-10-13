@@ -42,6 +42,12 @@ export class FeedUsuarioPage {
 
   }
 
+  ordenarTime(){
+    return this.lista_produtos.sort(
+      (a, b) => b.created_time > a.created_time ? 1 : b.created_time === a.created_time ? 0 : -1
+      );
+  }
+
   goToTelaProdutoPage(produto){
     console.log();
     this.navCtrl.push(TelaProdutoPage, {

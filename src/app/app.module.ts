@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+
+
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
@@ -29,6 +31,8 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
+
+import { InAppBrowser } from "@ionic-native/in-app-browser" //Para abrir um link externo no app
 
 
 @NgModule({
@@ -75,7 +79,8 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ProdutosProvider
+    ProdutosProvider,
+    InAppBrowser
   ]
 })
 export class AppModule {}
