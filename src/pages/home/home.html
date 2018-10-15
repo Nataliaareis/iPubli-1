@@ -5,60 +5,16 @@
 </ion-header>
 
 <ion-content padding>
-    <!-- Pessoas Mais Seguidas -->
-    <h2>Pessoas Mais Seguidas</h2>
-    <ion-card>
-        <img src="../assets/imgs/kim.jpg"/>
-        <ion-card-content>
-            <ion-card-title>
-                Kim Kardashian
-            </ion-card-title>
-        </ion-card-content>
-    </ion-card>
 
-    <ion-card>
-        <img src="../assets/imgs/kylie.jpg"/>
-        <ion-card-content>
-            <ion-card-title>
-                Kylie Jenner
-            </ion-card-title>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <img src="../assets/imgs/adriana.jpg"/>
-        <ion-card-content>
-            <ion-card-title>
-                Adriana Sant'anna
-            </ion-card-title>
-        </ion-card-content>
-    </ion-card>
-
+    
     <!-- Produtos Mais Acessados -->
-    <h2>Produtos Mais Acessados</h2>
-    <ion-card>
-        <img src="../assets/imgs/vestido.jpg"/>
+    
+    <h2 >Produtos Mais Acessados</h2>
+    <ion-card *ngFor = "let produto of orderLikes() | slice:0:3"><!-- Limitar: *ngFor = "xxxxxx | slice:0:X"-->
+        <img (click) = "goToTelaProdutoPage(produto)" [src]= "produto.images.standard_resolution.url"/>
         <ion-card-content>
             <ion-card-title>
-                Vestido
-            </ion-card-title>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <img src="../assets/imgs/oculos.jpg"/>
-        <ion-card-content>
-            <ion-card-title>
-                Óculos
-            </ion-card-title>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <img src="../assets/imgs/bolsa.jpg"/>
-        <ion-card-content>
-            <ion-card-title>
-                Bolsa
+               Likes: {{ produto.likes.count}}
             </ion-card-title>
         </ion-card-content>
     </ion-card>
@@ -66,28 +22,28 @@
     <!-- Marcas em Destaque -->
     <h2>Marcas em Destaque</h2>
     <ion-card>
-        <img src="../assets/imgs/louis.jpeg"/>
+        <img src="../assets/imgs/Tecshow.png"/>
         <ion-card-content>
             <ion-card-title>
-                Louis Vuitton
+                Tecshow
             </ion-card-title>
         </ion-card-content>
     </ion-card>
 
     <ion-card>
-        <img src="../assets/imgs/michael.png"/>
+        <img src="../assets/imgs/aninas.jpg"/>
         <ion-card-content>
             <ion-card-title>
-                Michael Kors
+               Aninas
             </ion-card-title>
         </ion-card-content>
     </ion-card>
 
     <ion-card>
-        <img src="../assets/imgs/maybelline.jpg"/>
+        <img src="../assets/imgs/variedades.jpg"/>
         <ion-card-content>
             <ion-card-title>
-                Maybelline
+                Empresa de Variedades
             </ion-card-title>
         </ion-card-content>
     </ion-card>

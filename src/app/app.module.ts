@@ -4,6 +4,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
@@ -29,6 +33,9 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
+
+import { InAppBrowser } from "@ionic-native/in-app-browser"
+import { UserProvider } from '../providers/user/user'; //Para abrir um link externo no app
 
 
 @NgModule({
@@ -59,7 +66,16 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
     FeedUsuarioPageModule,
     TelaConfiguracoesPageModule,
     CadastroEscolhaPageModule,
-    TelaUploadPageModule
+    TelaUploadPageModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
+      authDomain: "ipubli-080818.firebaseapp.com",
+      databaseURL: "https://ipubli-080818.firebaseio.com",
+      projectId: "ipubli-080818",
+      storageBucket: "ipubli-080818.appspot.com",
+      messagingSenderId: "291747959916"
+    }),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -75,7 +91,9 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ProdutosProvider
+    ProdutosProvider,
+    InAppBrowser,
+    UserProvider
   ]
 })
 export class AppModule {}

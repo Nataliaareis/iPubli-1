@@ -16,10 +16,10 @@
 <ion-content padding>
   
 
-  <ion-card *ngFor = "let produto of lista_produtos">
+  <ion-card *ngFor = "let produto of ordenarTime()"> <!-- Limitar: *ngFor = "xxxxxx | slice:0:X"-->
     <ion-item>
       <ion-avatar item-start>
-        <img src="../assets/imgs/feed_exemplo_01.jpg">
+        <img src="../assets/imgs/logo transparente.png">
       </ion-avatar>
       <h2>{{ produto.user.username }}</h2>
       <p>{{ produto.location }}</p>

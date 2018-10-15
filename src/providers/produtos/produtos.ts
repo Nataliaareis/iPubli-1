@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class ProdutosProvider {
 
   private baseApiPath = "https://api.instagram.com/v1";
-  private tag = "ipubli1"
+  private tag = "ipubli"
   private accessTK = "/?access_token=";
 
   constructor(public http: HttpClient) {
