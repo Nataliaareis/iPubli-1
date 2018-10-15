@@ -5,6 +5,8 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -63,7 +65,16 @@ import { InAppBrowser } from "@ionic-native/in-app-browser" //Para abrir um link
     FeedUsuarioPageModule,
     TelaConfiguracoesPageModule,
     CadastroEscolhaPageModule,
-    TelaUploadPageModule
+    TelaUploadPageModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
+      authDomain: "ipubli-080818.firebaseapp.com",
+      databaseURL: "https://ipubli-080818.firebaseio.com",
+      projectId: "ipubli-080818",
+      storageBucket: "ipubli-080818.appspot.com",
+      messagingSenderId: "291747959916"
+    }),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
