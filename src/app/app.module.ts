@@ -34,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
 
-import { InAppBrowser } from "@ionic-native/in-app-browser" //Para abrir um link externo no app
+import { InAppBrowser } from "@ionic-native/in-app-browser"
+import { UserProvider } from '../providers/user/user'; //Para abrir um link externo no app
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { InAppBrowser } from "@ionic-native/in-app-browser" //Para abrir um link
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutosProvider,
-    InAppBrowser
+    InAppBrowser,
+    UserProvider
   ]
 })
 export class AppModule {}
