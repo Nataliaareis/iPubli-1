@@ -36,6 +36,9 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
 
 import { InAppBrowser } from "@ionic-native/in-app-browser"
 import { UserProvider } from '../providers/user/user'; //Para abrir um link externo no app
+import { LoginPage } from '../pages/login/login';
+import { LoginPageModule } from '../pages/login/login.module';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -67,6 +70,7 @@ import { UserProvider } from '../providers/user/user'; //Para abrir um link exte
     TelaConfiguracoesPageModule,
     CadastroEscolhaPageModule,
     TelaUploadPageModule,
+    LoginPageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
       authDomain: "ipubli-080818.firebaseapp.com",
@@ -75,7 +79,8 @@ import { UserProvider } from '../providers/user/user'; //Para abrir um link exte
       storageBucket: "ipubli-080818.appspot.com",
       messagingSenderId: "291747959916"
     }),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
