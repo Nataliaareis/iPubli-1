@@ -8,7 +8,6 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
-import { HidePage } from '../pages/hide/hide';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserPageModule } from '../pages/user/user.module';
@@ -48,8 +47,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    HidePage
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -101,8 +99,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ContactPage,
     HomePage,
     TabsPage,
-    UserPage,
-    HidePage
+    UserPage
   ],
   providers: [
     StatusBar,
