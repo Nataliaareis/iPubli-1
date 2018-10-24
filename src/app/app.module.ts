@@ -5,9 +5,6 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
@@ -33,6 +30,7 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
+import { TelaUploadProvider } from '../providers/tela-upload/tela-upload';
 
 import { InAppBrowser } from "@ionic-native/in-app-browser"
 import { UserProvider } from '../providers/user/user'; //Para abrir um link externo no app
@@ -40,6 +38,9 @@ import { LoginPage } from '../pages/login/login';
 import { LoginPageModule } from '../pages/login/login.module';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// importar modulos do Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,17 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
+      authDomain: "ipubli-080818.firebaseapp.com",
+      databaseURL: "https://ipubli-080818.firebaseio.com",
+      projectId: "ipubli-080818",
+      storageBucket: "ipubli-080818.appspot.com",
+      messagingSenderId: "291747959916"
+    }),
+    AngularFireDatabaseModule,
+
     HttpClientModule,
     UserPageModule,
     SignupPageModule,
@@ -98,7 +110,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutosProvider,
     InAppBrowser,
-    UserProvider
+    UserProvider,
+    TelaUploadProvider
   ]
 })
 export class AppModule {}
