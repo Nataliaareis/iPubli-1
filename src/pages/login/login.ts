@@ -14,7 +14,7 @@ constructor(public navCtrl: NavController,
               public firebaseauth: AngularFireAuth) {
       firebaseauth.user.subscribe((data => {
         this.user = data;
-      }));     
+      }));
   }
 public LoginComEmail(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value , this.password.value)
