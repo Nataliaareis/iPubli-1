@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Upload</ion-title>
+        <ion-title> {{ title }} </ion-title>
       </ion-navbar>
 <!--
     <ion-toolbar color="dark">
@@ -21,8 +21,8 @@
   <!--
   <h2>Upload</h2>
   -->
-  <h2> </h2>
 
+  <!--
   <ion-toolbar color="dark">
       <ion-searchbar (input)="getItems($event)"></ion-searchbar>
   </ion-toolbar>
@@ -57,5 +57,56 @@
 
   <p>
     <button ion-button color="danger" full>Adicionar </button>
-  </p>
+  </p>-->
+
+    <form [formGroup]="form">
+      <!-- Produto -->
+      <ion-item>
+          <ion-label stacked>Produto</ion-label>
+          <ion-input type="text" formControlName="prodname"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.prodname.valid && (form.controls.prodname.dirty || form.controls.prodname.touched)" color="danger">
+          <div [hidden]="!form.controls.prodname.errors.required">
+              Obrigatório.
+          </div>
+      </ion-item>
+
+      <!-- Influencer -->
+      <ion-item>
+          <ion-label stacked>Influencer</ion-label>
+          <ion-input type="text" formControlName="prodinfluencer"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.prodinfluencer.valid && (form.controls.prodinfluencer.dirty || form.controls.prodinfluencer.touched)" color="danger">
+          <div [hidden]="!form.controls.prodinfluencer.errors.required">
+              Obrigatório.
+          </div>
+      </ion-item>
+
+      <!-- Data -->
+      <ion-item>
+          <ion-label stacked>Data</ion-label>
+          <ion-input type="date-local" formControlName="proddate"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.proddate.valid && (form.controls.proddate.dirty || form.controls.proddate.touched)" color="danger">
+          <div [hidden]="!form.controls.proddate.errors.required">
+              Obrigatório.
+          </div>
+      </ion-item>
+
+      <!-- Link -->
+      <ion-item>
+        <ion-label stacked>Link</ion-label>
+        <ion-input type="text" formControlName="prodlink"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.prodlink.valid && (form.controls.prodlink.dirty || form.controls.prodlink.touched)" color="danger">
+        <div [hidden]="!form.controls.prodlink.errors.required">
+            Obrigatório.
+        </div>
+      </ion-item>
+
+      <!-- Botao para Salvar -->
+      <div padding>
+          <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Adicionar</button>
+      </div>
+  </form>
 </ion-content>

@@ -29,7 +29,11 @@ import { CadastroEscolhaPageModule } from '../pages/cadastro-escolha/cadastro-es
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutosProvider } from '../providers/produtos/produtos';
 import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
+import { TelaUploadProvider } from '../providers/tela-upload/tela-upload';
 
+// importar modulos do Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,17 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
+      authDomain: "ipubli-080818.firebaseapp.com",
+      databaseURL: "https://ipubli-080818.firebaseio.com",
+      projectId: "ipubli-080818",
+      storageBucket: "ipubli-080818.appspot.com",
+      messagingSenderId: "291747959916"
+    }),
+    AngularFireDatabaseModule,
+
     HttpClientModule,
     UserPageModule,
     SignupPageModule,
@@ -75,7 +90,8 @@ import { TelaUploadPageModule } from '../pages/tela-upload/tela-upload.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ProdutosProvider
+    ProdutosProvider,
+    TelaUploadProvider
   ]
 })
 export class AppModule {}
