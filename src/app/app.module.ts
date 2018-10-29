@@ -40,6 +40,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // importar modulos do Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SignupEmpresaProvider } from '../providers/signup-empresa/signup-empresa';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ProdutosProvider,
     InAppBrowser,
     UserProvider,
-    TelaUploadProvider
+    TelaUploadProvider,
+    SignupEmpresaProvider
   ]
 })
 export class AppModule {}
