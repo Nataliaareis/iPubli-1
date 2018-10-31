@@ -41,6 +41,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SignupEmpresaProvider } from '../providers/signup-empresa/signup-empresa';
+import { ResetSenhaPage } from '../pages/reset-senha/reset-senha';
+import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,8 @@ import { SignupEmpresaProvider } from '../providers/signup-empresa/signup-empres
       messagingSenderId: "291747959916"
     }),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ResetSenhaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
