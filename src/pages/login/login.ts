@@ -3,6 +3,7 @@ import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ResetSenhaPage } from '../reset-senha/reset-senha';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-login',
@@ -23,10 +24,9 @@ public LoginComEmail(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value , this.password.value)
       .then(() => {
         this.exibirToast('Login efetuado com sucesso');
-        //this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(TabsPage);
       })
       .catch((erro: any) => {
-        //this.exibirToast(erro);
         let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
           if (erro.code == 'auth/invalid-email') {
             toast.setMessage('O e-mail digitado não é valido.');
@@ -41,19 +41,35 @@ public LoginComEmail(): void {
       });
   }
 public cadastrarUsuario(): void {
+    let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
     this.firebaseauth.auth.createUserWithEmailAndPassword(this.email.value , this.password.value)
     .then(() => {
       this.firebaseauth.auth.currentUser.sendEmailVerification();
-      this.exibirToast('Usuário criado com sucesso');
+
+      toast.setMessage('Usuário criado com sucesso.');
+      toast.present();
+
+      this.navCtrl.setRoot(TabsPage);
+
     })
     .catch((erro: any) => {
-      this.exibirToast(erro);
+      if (erro.code  == 'auth/email-already-in-use') {
+        toast.setMessage('O e-mail digitado já está em uso.');
+      } else if (erro.code  == 'auth/invalid-email') {
+        toast.setMessage('O e-mail digitado não é valido.');
+      } else if (erro.code  == 'auth/operation-not-allowed') {
+        toast.setMessage('Não está habilitado criar usuários.');
+      } else if (erro.code  == 'auth/weak-password') {
+        toast.setMessage('A senha digitada é muito fraca.');
+      }
+      toast.present();
     });
   }
 public Sair(): void {
     this.firebaseauth.auth.signOut()
     .then(() => {
       this.exibirToast('Você saiu');
+      this.navCtrl.parent.parent.setRoot(LoginPage);
     })
     .catch((erro: any) => {
       this.exibirToast(erro);
@@ -68,6 +84,10 @@ private exibirToast(mensagem: string): void {
 
 goToResetSenhaPage(){
   this.navCtrl.push(ResetSenhaPage)
+}
+
+goToTabsPage(){
+  this.navCtrl.push(TabsPage)
 }
 
 }

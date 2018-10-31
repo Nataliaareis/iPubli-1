@@ -2,13 +2,13 @@ import { Component, Pipe } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProdutosProvider } from '../../providers/produtos/produtos';
 import { TelaProdutoPage } from '../tela-produto/tela-produto';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   public lista_produtos = new Array<any>();
 
   constructor(
