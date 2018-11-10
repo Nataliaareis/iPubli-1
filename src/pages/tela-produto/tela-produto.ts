@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
 import { ProdutosProvider } from '../../providers/produtos/produtos';
+import { InAppBrowserOptions, InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the TelaProdutoPage page.
@@ -22,7 +23,9 @@ export class TelaProdutoPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public produtosProvider: ProdutosProvider) {
+    public produtosProvider: ProdutosProvider,
+    private InAppBrowser: InAppBrowser 
+    ) {
     this.produto = navParams.get("parametro");
     console.log(this.produto);
   }
@@ -35,6 +38,15 @@ export class TelaProdutoPage {
     this.navCtrl.push(DescricaoProdutoPage,{
       parametro: produto
     })
+  }
+
+  openWebPage(url: string){
+    const option: InAppBrowserOptions = {
+      zoom: 'no',
+      hardwareback: 'no'
+    }
+    const browser = this.InAppBrowser.create(url, '_self', option);
+    browser.show();
   }
 
 }

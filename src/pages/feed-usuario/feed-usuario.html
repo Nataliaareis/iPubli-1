@@ -1,13 +1,22 @@
 <!--
   Generated template for the FeedUsuarioPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
+  See http://ionicframework.com/docs/components/#navigation for more info on  
   Ionic pages and navigation.
 -->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Histórias</ion-title>
+    <ion-title *ngIf="!isSearchbarOpened">
+      Histórias
+    </ion-title>
+    <ion-searchbar *ngIf="isSearchbarOpened" [showCancelButton]="true" (ionInput)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,16 +25,15 @@
 <ion-content padding>
   
 
-  <ion-card *ngFor = "let produto of ordenarTime()"> <!-- Limitar: *ngFor = "xxxxxx | slice:0:X"-->
+  <ion-card *ngFor="let produto of ordenarTime()"><!-- Limitar: *ngFor = "xxxxxx | slice:0:X"-->
     <ion-item>
       <ion-avatar item-start>
         <img src="../assets/imgs/logo transparente.png">
       </ion-avatar>
       <h2>{{ produto.user.username }}</h2>
-      <p>{{ produto.location }}</p>
+      <!--<p>{{ produto.location }}</p>-->
     </ion-item>
-  
-    <img (click) = "goToTelaProdutoPage(produto)" [src]= "produto.images.standard_resolution.url">
+    <img (click)="goToTelaProdutoPage(produto)" [src]="produto.images.standard_resolution.url">
   </ion-card>
 
 </ion-content>

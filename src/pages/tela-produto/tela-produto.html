@@ -21,7 +21,7 @@
   <button ion-button color = "light" > Não Gostei</button>
   <button ion-button (click) = "goToDescricaoProdutoPage(produto)" color = "light" > Info.</button>
 
-  <button ion-button full color = "dark" > Comprar </button>
+  <button ion-button full color = "dark" (click)="openWebPage(produto.link)"> Site </button>
 
 
 </ion-content>
