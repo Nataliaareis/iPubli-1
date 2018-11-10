@@ -28,12 +28,12 @@ export class SignupEmpresaProvider {
     return new Promise((resolve, reject) => {
       if (empresa.key) {
         this.db.list(this.PATH)
-          .update(empresa.key, { name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password })
+          .update(empresa.key, { name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password, type: 'empresa' })
           .then(() => resolve())
           .catch((e) => reject(e));
       } else {
         this.db.list(this.PATH)
-          .push({ name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password })
+          .push({ name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password, type: 'empresa' })
           .then(() => resolve());
       }
     })

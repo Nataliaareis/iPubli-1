@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -35,12 +34,12 @@ export class UserProvider {
     return new Promise((resolve, reject) => {
       if (user.key) {
         this.db.list(this.PATH)
-          .update(user.key, { name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password })
+          .update(user.key, { name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
           .then(() => resolve())
           .catch((e) => reject(e));
       } else {
         this.db.list(this.PATH)
-          .push({ name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password })
+          .push({ name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
           .then(() => resolve());
       }
     })
