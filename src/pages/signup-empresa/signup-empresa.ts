@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 
 import { SignupEmpresaProvider } from './../../providers/signup-empresa/signup-empresa';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TabsPage } from '../tabs/tabs';
 
 
 @IonicPage()
@@ -31,8 +32,6 @@ export class SignupEmpresaPage {
       name: [this.empresa.name, Validators.required],
       cnpj: [this.empresa.cnpj, Validators.required],
       empresakey: [this.empresa.empresakey, Validators.required],
-      email: [this.empresa.email, Validators.required],
-      password: [this.empresa.password, Validators.required],
     });
   }
 
@@ -40,11 +39,12 @@ export class SignupEmpresaPage {
     if (this.form.valid) {
       this.provider.save(this.form.value)
         .then(() => {
-          this.toast.create({ message: 'Empresa criada com sucesso.', duration: 3000 }).present();
-          this.navCtrl.pop();
+          this.toast.create({ message: 'Informações cadastradas com sucesso.', duration: 3000 }).present();
+          //this.navCtrl.pop();
+          this.navCtrl.setRoot(TabsPage);
         })
         .catch((e) => {
-          this.toast.create({ message: 'Erro ao criar EmpresaProvider.', duration: 3000 }).present();
+          this.toast.create({ message: 'Erro ao cadastrar informações.', duration: 3000 }).present();
           console.error(e);
         })
     }

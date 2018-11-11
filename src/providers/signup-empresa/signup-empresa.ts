@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class SignupEmpresaProvider {
 
   private PATH = 'signup-empresa/';
+  userid: string;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private afauth: AngularFireAuth) {
+    afauth.authState.subscribe(user => {
+      if (user){
+      this.userid = user.uid
+      }
+    })
   }
 
   getAll() {
@@ -25,7 +32,9 @@ export class SignupEmpresaProvider {
   }
 
   save(empresa: any) {
-    return new Promise((resolve, reject) => {
+    return this.db.list(this.PATH).update(this.userid, { name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, type: 'empresa' })
+    
+    /*return new Promise((resolve, reject) => {
       if (empresa.key) {
         this.db.list(this.PATH)
           .update(empresa.key, { name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password, type: 'empresa' })
@@ -36,7 +45,7 @@ export class SignupEmpresaProvider {
           .push({ name: empresa.name, cnpj: empresa.cnpj, empresakey: empresa.empresakey, email: empresa.email, password: empresa.password, type: 'empresa' })
           .then(() => resolve());
       }
-    })
+    })*/
   }
 
   remove(key: string) {

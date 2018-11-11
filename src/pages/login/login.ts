@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { ResetSenhaPage } from '../reset-senha/reset-senha';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
+import { CadastroEscolhaPage } from '../cadastro-escolha/cadastro-escolha';
+
 
 @Component({
   selector: 'page-login',
@@ -49,7 +51,7 @@ public cadastrarUsuario(): void {
       toast.setMessage('Usuário criado com sucesso.');
       toast.present();
 
-      this.navCtrl.setRoot(TabsPage);
+      this.navCtrl.setRoot(CadastroEscolhaPage); 
 
     })
     .catch((erro: any) => {

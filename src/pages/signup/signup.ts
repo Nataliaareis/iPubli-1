@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 
 import { UserProvider } from './../../providers/user/user';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the SignupPage page.
@@ -21,7 +22,12 @@ export class SignupPage {
   form: FormGroup;
   user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private provider: UserProvider, private toast: ToastController) {7
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private formBuilder: FormBuilder, 
+    private provider: UserProvider, 
+    private toast: ToastController) {
     this.user = this.navParams.data.contact || { };
     this.createForm();
 
@@ -37,8 +43,6 @@ export class SignupPage {
       name: [this.user.name, Validators.required],
       lname: [this.user.lname, Validators.required],
       userkey: [this.user.userkey, Validators.required],
-      email: [this.user.email, Validators.required],
-      password: [this.user.password, Validators.required],
     });
   }
  
@@ -46,11 +50,12 @@ export class SignupPage {
     if (this.form.valid) {
       this.provider.save(this.form.value)
         .then(() => {
-          this.toast.create({ message: 'Usuário criado com sucesso.', duration: 3000 }).present();
-          this.navCtrl.pop();
+          this.toast.create({ message: 'Informações cadastradas com sucesso.', duration: 3000 }).present();
+          //this.navCtrl.pop();
+          this.navCtrl.setRoot(TabsPage);
         })
         .catch((e) => {
-          this.toast.create({ message: 'Erro ao criar usuário.', duration: 3000 }).present();
+          this.toast.create({ message: 'Erro ao cadastrar informações.', duration: 3000 }).present();
           console.error(e);
         })
     }

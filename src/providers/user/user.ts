@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /*
   Generated class for the UserProvider provider.
@@ -11,8 +12,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class UserProvider {
 
   private PATH = 'users/';
+  userid: string;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private afauth: AngularFireAuth) {
+    afauth.authState.subscribe(user => {
+      if (user){
+      this.userid = user.uid
+      }
+    })
   }
  
   getAll() {
@@ -30,19 +37,22 @@ export class UserProvider {
       });
   }
  
-  save(user: any) {
-    return new Promise((resolve, reject) => {
+  save(userdata: any) {
+    
+    return this.db.list(this.PATH).update(this.userid, { name: userdata.name, lname: userdata.lname, userkey: userdata.userkey,  type: 'usuário' })
+          
+    /*return new Promise((resolve, reject) => {
       if (user.key) {
         this.db.list(this.PATH)
-          .update(user.key, { name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
+          .update(this.userid, { name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
           .then(() => resolve())
           .catch((e) => reject(e));
       } else {
-        this.db.list(this.PATH)
-          .push({ name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
+        this.db.object(this.PATH +  this.userid)
+          .set({ name: user.name, lname: user.lname, userkey: user.userkey, email: user.email, password: user.password, type: 'usuário' })
           .then(() => resolve());
       }
-    })
+    })*/
   }
  
   remove(key: string) {
