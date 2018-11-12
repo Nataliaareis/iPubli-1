@@ -27,12 +27,12 @@ export class TelaUploadProvider {
     return new Promise((resolve, reject) => {
       if (prod.key) {
         this.db.object(this.PATH + prod.key)
-        .update({ prodname: prod.prodname, prodinfluencer: prod.prodinfluencer, proddate: prod.proddate, prodlink: prod.prodlink })
+        .update({ prodname: prod.prodname, prodinfluencer: prod.prodinfluencer, proddate: prod.proddate, prodlink: prod.prodlink, prodimgurl: prod.prodimgurl })
         .then(() => resolve())
         .catch((e) => reject(e));
       } else {
         this.db.list(this.PATH)
-        .push({ prodname: prod.prodname, prodinfluencer: prod.prodinfluencer, proddate: prod.proddate, prodlink: prod.prodlink })
+        .push({ prodname: prod.prodname, prodinfluencer: prod.prodinfluencer, proddate: prod.proddate, prodlink: prod.prodlink, prodimgurl: prod.prodimgurl })
         .then(() => resolve());
       }
     });

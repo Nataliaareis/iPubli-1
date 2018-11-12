@@ -104,6 +104,13 @@
         </div>
       </ion-item>
 
+      <!-- Selecionar Imagem -->
+      <ion-item>
+          <button ion-button color="black" type="button" full round large (click)="selectPhoto()">
+              <ion-icon name="md-image"></ion-icon>
+          </button>
+      </ion-item>
+
       <!-- Botao para Salvar -->
       <div padding>
           <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Adicionar</button>

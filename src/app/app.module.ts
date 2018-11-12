@@ -45,6 +45,7 @@ import { ResetSenhaPage } from '../pages/reset-senha/reset-senha';
 import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
 import { BuscaEPage } from '../pages/busca-e/busca-e';
 import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
     InAppBrowser,
     UserProvider,
     TelaUploadProvider,
-    SignupEmpresaProvider
+    SignupEmpresaProvider,
+    Camera
   ]
 })
 export class AppModule {}
