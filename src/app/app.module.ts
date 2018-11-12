@@ -43,6 +43,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SignupEmpresaProvider } from '../providers/signup-empresa/signup-empresa';
 import { ResetSenhaPage } from '../pages/reset-senha/reset-senha';
 import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
+import { BuscaEPage } from '../pages/busca-e/busca-e';
+import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
 
 @NgModule({
   declarations: [
@@ -94,7 +96,8 @@ import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
     }),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    ResetSenhaPageModule
+    ResetSenhaPageModule,
+    BuscaEPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
