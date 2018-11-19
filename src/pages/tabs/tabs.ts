@@ -6,6 +6,7 @@ import { FavoritosPage } from '../favoritos/favoritos';
 import { FeedUsuarioPage } from '../feed-usuario/feed-usuario';
 import { TelaLoginPage } from '../tela-login/tela-login';
 import { BuscaEPage } from '../busca-e/busca-e';
+import { VisionPage } from '../vision/vision';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -19,6 +20,7 @@ export class TabsPage {
   tab5Root = LoginPage;
   tab6Root = TelaLoginPage;
   tab7Root = BuscaEPage;
+  tab8Root = VisionPage;
   constructor() {
   }
 }

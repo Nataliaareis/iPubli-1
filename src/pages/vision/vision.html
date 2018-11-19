@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Exemplo do Google Cloud Vision
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <button ion-button full (click)="tirarFoto()">Tirar foto</button>
+  
+    <ion-card *ngIf="imagem">
+      <img [src]="imagem">
+      
+      <ion-card-content>
+          <p *ngFor="let resultado of resultados">
+            {{ resultado.description }} - Há {{ verificarPrecisao(resultado.score) }}% de precisão.
+          </p>
+          <p></p>
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-content>

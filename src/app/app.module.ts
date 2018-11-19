@@ -46,6 +46,14 @@ import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
 import { BuscaEPage } from '../pages/busca-e/busca-e';
 import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
 import { Camera } from '@ionic-native/camera';
+import { VisionPageModule } from '../pages/vision/vision.module';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { VisionPage } from '../pages/vision/vision';
+import { GoogleCloudVisionServiceProvider } from '../providers/google-cloud-vision-service/google-cloud-vision-service';
+import { environment } from '../environment';
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -53,12 +61,13 @@ import { Camera } from '@ionic-native/camera';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    /*
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
       authDomain: "ipubli-080818.firebaseapp.com",
@@ -67,9 +76,10 @@ import { Camera } from '@ionic-native/camera';
       storageBucket: "ipubli-080818.appspot.com",
       messagingSenderId: "291747959916"
     }),
+    */
     AngularFireDatabaseModule,
-
     HttpClientModule,
+    HttpModule,
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
@@ -87,18 +97,13 @@ import { Camera } from '@ionic-native/camera';
     CadastroEscolhaPageModule,
     TelaUploadPageModule,
     LoginPageModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
-      authDomain: "ipubli-080818.firebaseapp.com",
-      databaseURL: "https://ipubli-080818.firebaseio.com",
-      projectId: "ipubli-080818",
-      storageBucket: "ipubli-080818.appspot.com",
-      messagingSenderId: "291747959916"
-    }),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ResetSenhaPageModule,
-    BuscaEPageModule
+    BuscaEPageModule,
+    VisionPageModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -107,18 +112,21 @@ import { Camera } from '@ionic-native/camera';
     ContactPage,
     HomePage,
     TabsPage,
-    UserPage
+    UserPage,
+    VisionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutosProvider,
     InAppBrowser,
     UserProvider,
     TelaUploadProvider,
     SignupEmpresaProvider,
-    Camera
+    Camera,
+    AngularFireDatabase,
+    GoogleCloudVisionServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
