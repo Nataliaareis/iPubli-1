@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
@@ -54,6 +53,8 @@ import { GoogleCloudVisionServiceProvider } from '../providers/google-cloud-visi
 import { environment } from '../environment';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { VisionUploadPage } from '../pages/vision-upload/vision-upload';
+import { VisionUploadPageModule } from '../pages/vision-upload/vision-upload.module';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
     BuscaEPageModule,
     VisionPageModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    VisionUploadPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

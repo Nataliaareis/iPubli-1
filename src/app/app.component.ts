@@ -12,11 +12,17 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   rootPage:any = LoginPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+      // statusBar.styleDefault();
+      //set top status bar overlay
+     // let status bar overlay webview
+    this.statusBar.overlaysWebView(true);
+
+    // set status bar to white
+    this.statusBar.backgroundColorByHexString('#ffffff');
       splashScreen.hide();
     });
   }

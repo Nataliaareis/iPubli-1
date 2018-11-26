@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Exemplo do Google Cloud Vision
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="imagem">
+    <img [src]="imagem">
+    
+  <ion-card-content>
+        <p *ngFor="let resultado of resultados">
+          {{ resultado.description }} - Há {{ verificarPrecisao(resultado.score) }}% de precisão.
+        </p>
+        <p></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card-content>
+    <p *ngFor="let marca of marcas">
+    marca eh {{ marca.description }}.
+    </p>
+    <p></p>
+</ion-card-content>
+  
+  <form [formGroup]="form">
+    <!-- Produto -->
+    <ion-item>
+        <ion-label stacked>Produto</ion-label>
+        <ion-input type="text" formControlName="prodname"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.prodname.valid && (form.controls.prodname.dirty || form.controls.prodname.touched)" color="danger">
+        <div [hidden]="!form.controls.prodname.errors.required">
+            Obrigatório.
+        </div>
+    </ion-item>
+
+    <!-- Influencer -->
+    <ion-item>
+        <ion-label stacked>Influencer</ion-label>
+        <ion-input type="text" formControlName="prodinfluencer"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.prodinfluencer.valid && (form.controls.prodinfluencer.dirty || form.controls.prodinfluencer.touched)" color="danger">
+        <div [hidden]="!form.controls.prodinfluencer.errors.required">
+            Obrigatório.
+        </div>
+    </ion-item>
+
+    <!-- Data -->
+    <ion-item>
+        <ion-label stacked>Data</ion-label>
+        <ion-input type="date-local" formControlName="proddate"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.proddate.valid && (form.controls.proddate.dirty || form.controls.proddate.touched)" color="danger">
+        <div [hidden]="!form.controls.proddate.errors.required">
+            Obrigatório.
+        </div>
+    </ion-item>
+
+    <!-- Link -->
+    <ion-item>
+      <ion-label stacked>Link</ion-label>
+      <ion-input type="text" formControlName="prodlink"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.prodlink.valid && (form.controls.prodlink.dirty || form.controls.prodlink.touched)" color="danger">
+      <div [hidden]="!form.controls.prodlink.errors.required">
+          Obrigatório.
+      </div>
+    </ion-item>
+
+    <!-- Selecionar Imagem -->
+    <ion-item>
+        <button ion-button color="black" type="button" full round large (click)="tirarFoto()">
+            <ion-icon name="md-image"></ion-icon>
+        </button>
+    </ion-item>
+
+    <!-- Botao para Salvar -->
+    <div padding>
+        <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Adicionar</button>
+    </div>
+</form>
+
+</ion-content>
