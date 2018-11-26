@@ -8,7 +8,7 @@
 
 
 <ion-content padding>
-    <div *ngIf="userid!=null">
+  <div *ngIf="userid!=null">
     <div class="foto"></div>
     <div class="quadro-nome">
       <h1 class="nome">{{userdata.name}}</h1>
@@ -21,7 +21,25 @@
       <h4 class="dados3">30</h4>
       <p class="info-dados3">Seguindo</p>
     </div>
-    </div>
-    <div *ngIf="user!=null">Teste</div>
-
+  </div>
+  <div class="margem" *ngIf="userid!=null">
+      <ion-card>
+          <ion-list>
+            <button ion-item (click)="abrirPastas()">
+              <ion-icon name="folder-open" item-start color="primary"></ion-icon>
+              <p class="titulo-menu">Pastas</p>
+            </button>
+        
+            <button ion-item>
+              <ion-icon name="cloud-upload" item-start color="primary"></ion-icon>
+              <p class="titulo-menu">Upload de Foto Perfil</p>
+            </button> 
+            <button ion-item>
+                <ion-icon name="settings" item-start color="primary"></ion-icon>
+                <p class="titulo-menu">Configurações de Conta</p>
+              </button>  
+          </ion-list>
+      </ion-card>
+  </div>
+  <div *ngIf="user!=null">Teste</div>
 </ion-content>
