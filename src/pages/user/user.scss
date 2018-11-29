@@ -1,4 +1,16 @@
 page-user {
+    div.teste {
+        position: fixed;
+        margin-top: 50%;
+        background:#000;
+        color: #ffffff;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+     }
+     div.margem {
+        margin-top: 110%;
+     }
     div.foto {
         min-width: 200px;
         min-height: 200px;
@@ -8,24 +20,31 @@ page-user {
         position: absolute;
         left: 25%;
         top: 8%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%);
     }
     div.quadro-nome {
-        width: 240px;
+        width: 54%;
+        margin-left: 18%;
+        margin-right: 28%;
         height: 90px;
         background: #bdb6b8;
         position: absolute;
-        left: 20%;
         top: 225px;
-        -webkit-box-shadow: 5px -9px 3px #000;
-        box-shadow: 0px -1px 1px #000;
+        -webkit-box-shadow: 0px 10px 10px #000;
+        box-shadow: 0px 10px 10px #000;
     }
     div.quadro-dados {
-        width: 280px;
+        width: 64%;
+        margin-left: 13%;
+        margin-right: 23%;
         height: 100px;
         background: #ff3366;
         position: absolute;
-        left: 15%;
         top: 300px;
+        -webkit-box-shadow: 0px 0px 10px #000;
+        box-shadow: 0px 0px 10px #000;
     }
 
     h1.nome {
@@ -82,5 +101,11 @@ page-user {
         left: 80%;
         transform: translate(-50%, -50%);
         color: #ffffff;
-    }            
+    }
+
+    p.titulo-menu{
+        color: #ff2c68;
+    }
+
+                    
 }

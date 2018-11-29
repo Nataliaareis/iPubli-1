@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
@@ -47,6 +46,16 @@ import { BuscaEPage } from '../pages/busca-e/busca-e';
 import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
 import { Camera } from '@ionic-native/camera';
 import { InfluencerPageModule } from '../pages/influencer/influencer.module';
+import { VisionPageModule } from '../pages/vision/vision.module';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { VisionPage } from '../pages/vision/vision';
+import { GoogleCloudVisionServiceProvider } from '../providers/google-cloud-vision-service/google-cloud-vision-service';
+import { environment } from '../environment';
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { VisionUploadPage } from '../pages/vision-upload/vision-upload';
+import { VisionUploadPageModule } from '../pages/vision-upload/vision-upload.module';
 
 @NgModule({
   declarations: [
@@ -54,12 +63,13 @@ import { InfluencerPageModule } from '../pages/influencer/influencer.module';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    /*
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
       authDomain: "ipubli-080818.firebaseapp.com",
@@ -68,9 +78,10 @@ import { InfluencerPageModule } from '../pages/influencer/influencer.module';
       storageBucket: "ipubli-080818.appspot.com",
       messagingSenderId: "291747959916"
     }),
+    */
     AngularFireDatabaseModule,
-
     HttpClientModule,
+    HttpModule,
     UserPageModule,
     SignupPageModule,
     SignupEmpresaPageModule,
@@ -100,7 +111,11 @@ import { InfluencerPageModule } from '../pages/influencer/influencer.module';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ResetSenhaPageModule,
-    BuscaEPageModule
+    BuscaEPageModule,
+    VisionPageModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    VisionUploadPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -109,18 +124,21 @@ import { InfluencerPageModule } from '../pages/influencer/influencer.module';
     ContactPage,
     HomePage,
     TabsPage,
-    UserPage
+    UserPage,
+    VisionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutosProvider,
     InAppBrowser,
     UserProvider,
     TelaUploadProvider,
     SignupEmpresaProvider,
-    Camera
+    Camera,
+    AngularFireDatabase,
+    GoogleCloudVisionServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
