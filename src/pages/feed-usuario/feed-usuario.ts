@@ -5,6 +5,7 @@ import { ProdutosProvider } from '../../providers/produtos/produtos';
 import { Pipe, PipeTransform } from '@angular/core';
 
 import { TelaProdutoPage } from '../tela-produto/tela-produto';
+import { InfluencerPage } from '../influencer/influencer';
 import { DescricaoProdutoPage } from '../descricao-produto/descricao-produto'
 /**
  * Generated class for the FeedUsuarioPage page.
@@ -30,6 +31,11 @@ export class FeedUsuarioPage {
   public valorpesq;
   public lista_pesq = this.lista_produtos;
   public lista_original = new Array<any>();
+  public lista_influencers = new Array<any>();
+  public influencers = 
+          ["angelinadasilvaipubli",
+           "jorgepittipubl",
+           "adrianasantanaipubli"];
 
   constructor(
     public navCtrl: NavController, 
@@ -44,13 +50,20 @@ export class FeedUsuarioPage {
       data=>{
         const response = (data as any);
         this.lista_produtos = response.data;
-        this.lista_original = response.data
+        this.lista_original = response.data;
+        this.lista_influencers = response.data;
         console.log(this.lista_produtos);
       }, error =>{
         console.log(error);
       }
     )
 
+  }
+
+  mostrarInfl(){
+    this.lista_influencers = this.lista_influencers.filter(lista_influencers =>{
+      return ((lista_influencers.user.username.indexOf(this.influencers[0]) > -1 )); //pesquisa empresa
+    })
   }
 
   ordenarTime(){
@@ -66,12 +79,22 @@ export class FeedUsuarioPage {
     })
   }
 
+  goToTelaInfluencerPage(item){
+    console.log();
+    this.navCtrl.push(InfluencerPage, {
+      parametro: item
+    })
+  }
+
+
   onSearch(event: any){//Para pesquisar
     this.valorpesq = event.target.value;
+    
     if(this.valorpesq && this.valorpesq.trim() != ''){
       this.lista_produtos = this.lista_produtos.filter(lista_produtos =>{
         return ((lista_produtos.user.username.indexOf(this.valorpesq) > -1 ||//pesquisa o influencer
-                lista_produtos.caption.text.indexOf(this.valorpesq) > -1)); //pesquisa alguma palavra(produto) na descrição
+                lista_produtos.caption.text.indexOf(this.valorpesq) > -1 ||//pesquisa alguma palavra(produto) na descrição
+                lista_produtos.users_in_photo[0].user.username.indexOf(this.valorpesq) > -1)); //pesquisa empresa
       })
     }
     else{

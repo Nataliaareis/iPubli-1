@@ -1,0 +1,36 @@
+page-influencer {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+    }
+    .image-container{
+        background-size: cover;
+        min-height: 100px;
+    }
+    
+    
+    @media (min-width: 0px){
+        .images{
+            column-count: 2;
+        }    
+    }
+
+    @media (min-width: 620px){
+        .images{
+            column-count: 3;
+        }    
+    }
+
+    @media (min-width: 820px){
+        .images{
+            column-count: 4;
+        }    
+    }
+
+    .one-image{
+        margin: 2px;
+    }
+}

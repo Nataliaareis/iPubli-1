@@ -23,7 +23,21 @@
 
 
 <ion-content padding>
-  
+  <h1>influencers</h1>
+    <ion-scroll scrollX="true" direction="x">
+        <ion-card *ngFor="let item of influencers">
+          <ion-card-content>
+            <button ion-item (click)="goToTelaInfluencerPage(item)">   
+              {{ item }}
+              <ion-icon name="arrow-forward" item-right color="primary"></ion-icon>
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-scroll>
+
+  <h2>Publicações
+
+  </h2>
 
   <ion-card *ngFor="let produto of ordenarTime()"><!-- Limitar: *ngFor = "xxxxxx | slice:0:X"-->
     <ion-item>

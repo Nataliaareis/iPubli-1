@@ -46,6 +46,7 @@ import { ResetSenhaPageModule } from '../pages/reset-senha/reset-senha.module';
 import { BuscaEPage } from '../pages/busca-e/busca-e';
 import { BuscaEPageModule } from '../pages/busca-e/busca-e.module';
 import { Camera } from '@ionic-native/camera';
+import { InfluencerPageModule } from '../pages/influencer/influencer.module';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { Camera } from '@ionic-native/camera';
     CadastroEscolhaPageModule,
     TelaUploadPageModule,
     LoginPageModule,
+    InfluencerPageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyD8Cij63lrWDzQN6kxbFs1o5Qgg0KnC1Uc",
       authDomain: "ipubli-080818.firebaseapp.com",
