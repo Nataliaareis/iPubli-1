@@ -31,13 +31,13 @@ public LoginComEmail(): void {
       .catch((erro: any) => {
         let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
           if (erro.code == 'auth/invalid-email') {
-            toast.setMessage('O e-mail digitado não é valido.');
+            toast.setMessage('O e-mail digitado não é válido.');
           } else if (erro.code == 'auth/user-disabled') {
             toast.setMessage('O usuário está desativado.');
           } else if (erro.code == 'auth/user-not-found') {
             toast.setMessage('O usuário não foi encontrado.');
           } else if (erro.code == 'auth/wrong-password') {
-            toast.setMessage('A senha digitada não é valida.');
+            toast.setMessage('A senha digitada não é válida.');
           }
           toast.present();
       });
