@@ -16,7 +16,7 @@
     <img [src]= "produto.images.standard_resolution.url"/>
   </ion-card>
 
-  <button ion-button color = "light" > Quero</button>
+  <button ion-button color = "light" (click)="saveImagetoFolder()"> Quero</button>
   <button ion-button color = "light" > Testei</button>
   <button ion-button color = "light" > Não Gostei</button>
   <button ion-button (click) = "goToDescricaoProdutoPage(produto)" color = "light" > Info.</button>
