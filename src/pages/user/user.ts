@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable'
 import firebase, { User } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -18,14 +20,21 @@ export class UserPage {
   public name: string;
   public type: string;
   public userdata = {};
+  public user: any;
   public userProfile: firebase.database.Reference;
   public currentUser: User;
   constructor(public db: AngularFireDatabase, public afauth: AngularFireAuth, 
-              public navCtrl: NavController, public navParams: NavParams) {
+              public navCtrl: NavController, public navParams: NavParams,
+              public toastCtrl: ToastController,
+              public firebaseauth: AngularFireAuth) {
     afauth.authState.subscribe(user => {
       if (user){
-      this.userid = user.uid
+        this.userid = user.uid
       }
+      
+      firebaseauth.user.subscribe((data => {
+        this.user = data;
+      }));
     })
     
     firebase.auth().onAuthStateChanged(user => {
@@ -33,6 +42,7 @@ export class UserPage {
         this.currentUser = user;
       }
     });
+
     this.userdata = db.object('users/'+this.userid).valueChanges().subscribe(console.log);
     this.name = this.db.object('users/' + this.userid + '/name/').toString(); 
     this.type = this.db.object('users/' + this.userid + '/type/').toString();
@@ -47,6 +57,24 @@ export class UserPage {
     userdataref.on('value', userSnapshot => {
       this.userdata = userSnapshot.val();
     })
+  }
+
+  private exibirToast(mensagem: string): void {
+    let toast = this.toastCtrl.create({duration: 3000, 
+                                      position: 'botton'});
+    toast.setMessage(mensagem);
+    toast.present();
+  }
+
+  public Sair(): void {
+    this.firebaseauth.auth.signOut()
+    .then(() => {
+      this.exibirToast('Você saiu');
+      this.navCtrl.parent.parent.setRoot(LoginPage);
+    })
+    .catch((erro: any) => {
+      this.exibirToast(erro);
+    });
   }
 
   abrirPastas(){

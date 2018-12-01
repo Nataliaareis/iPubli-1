@@ -18,10 +18,10 @@ export class TabsPage {
   tab2Root = FeedUsuarioPage;
   tab3Root = FavoritosPage;
   tab4Root = UserPage;
-  tab5Root = LoginPage;
-  tab6Root = TelaLoginPage;
+ // tab5Root = LoginPage;
+  //tab6Root = TelaLoginPage;
   tab7Root = BuscaEPage;
-  tab8Root = VisionPage;
+  //tab8Root = VisionPage;
   tab9Root = VisionUploadPage;
   constructor() {
   }

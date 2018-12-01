@@ -55,7 +55,12 @@ import 'rxjs/add/operator/toPromise';
       prodinfluencer: [this.prod.prodinfluencer, Validators.required],
       proddate: [this.prod.proddate, Validators.required],
       prodlink: [this.prod.prodlink, Validators.required],
-      prodimgurl: ['']
+      prodimgurl: [''],
+      prodLabel0: [''],
+      prodLabel1: [''],
+      prodLabel2: [''],
+      prodLabel3: [''],
+      prodLabel4: ['']
     });
   }
 
