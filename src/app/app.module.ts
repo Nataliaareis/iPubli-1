@@ -56,6 +56,9 @@ import { HttpModule } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { VisionUploadPage } from '../pages/vision-upload/vision-upload';
 import { VisionUploadPageModule } from '../pages/vision-upload/vision-upload.module';
+import { LoginProvider } from '../providers/login/login';
+import { LoginEmpresaPage } from '../pages/login-empresa/login-empresa';
+import { LoginEmpresaPageModule } from '../pages/login-empresa/login-empresa.module';
 
 @NgModule({
   declarations: [
@@ -115,7 +118,8 @@ import { VisionUploadPageModule } from '../pages/vision-upload/vision-upload.mod
     VisionPageModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    VisionUploadPageModule
+    VisionUploadPageModule,
+    LoginEmpresaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -139,6 +143,7 @@ import { VisionUploadPageModule } from '../pages/vision-upload/vision-upload.mod
     AngularFireDatabase,
     GoogleCloudVisionServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginProvider,
   ]
 })
 export class AppModule {}

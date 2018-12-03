@@ -16,6 +16,21 @@
     <img [src]= "produto.images.standard_resolution.url"/>
   </ion-card>
 
+
+<!--
+  {{ produto.images.standard_resolution.url}}
+
+  <button ion-button color = "light" (click)="requisicaoParaAPI(produto)"> Quero</button>
+  
+  <ion-card-content>
+    <p *ngIf="resultados != null"> aaaaaaaaaaaaaaaaa </p>
+    <p *ngFor="let resultado of resultados">
+      {{ resultado.description }} - Há {{ verificarPrecisao(resultado.score) }}% de precisão.
+    </p>
+    <p></p>
+</ion-card-content>
+-->
+  
   <button ion-button color = "light" (click)="saveImagetoFolder()"> Quero</button>
   <button ion-button color = "light" > Testei</button>
   <button ion-button color = "light" > Não Gostei</button>

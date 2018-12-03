@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { SignupEmpresaProvider } from './../../providers/signup-empresa/signup-empresa';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TabsPage } from '../tabs/tabs';
+import { EmpresaHomePage } from '../empresa-home/empresa-home';
 
 
 @IonicPage()
@@ -41,7 +42,7 @@ export class SignupEmpresaPage {
         .then(() => {
           this.toast.create({ message: 'Informações cadastradas com sucesso.', duration: 3000 }).present();
           //this.navCtrl.pop();
-          this.navCtrl.setRoot(TabsPage);
+          this.navCtrl.setRoot(EmpresaHomePage);
         })
         .catch((e) => {
           this.toast.create({ message: 'Erro ao cadastrar informações.', duration: 3000 }).present();

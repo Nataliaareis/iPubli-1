@@ -5,8 +5,8 @@ import { ResetSenhaPage } from '../reset-senha/reset-senha';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
 import { CadastroEscolhaPage } from '../cadastro-escolha/cadastro-escolha';
+import { LoginPage } from '../login/login';
 import { EmpresaHomePage } from '../empresa-home/empresa-home';
-import { LoginEmpresaPage } from '../login-empresa/login-empresa';
 import { AngularFireDatabase } from 'angularfire2/database';
 import firebase, { User } from 'firebase/app';
 import 'firebase/auth';
@@ -14,10 +14,10 @@ import 'firebase/database';
 
 
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-login-empresa',
+  templateUrl: 'login-empresa.html'
 })
-export class LoginPage {
+export class LoginEmpresaPage {
   public user: any;
   @ViewChild('usuario') email;
   @ViewChild('senha') password;
@@ -49,7 +49,7 @@ constructor(public navCtrl: NavController,
   ionViewDidLoad() {
     this.firebaseauth.authState.subscribe(user => {
       if (user){
-        const userdataref: firebase.database.Reference = firebase.database().ref(`/users/${this.user.uid}`);
+        const userdataref: firebase.database.Reference = firebase.database().ref(`/signup-empresa/${this.user.uid}`);
         userdataref.on('value', userSnapshot => {
           this.userdata = userSnapshot.val();
         })
@@ -61,7 +61,7 @@ public LoginComEmail(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value , this.password.value)
       .then(() => {
         this.exibirToast('Login efetuado com sucesso');
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(EmpresaHomePage);
       })
       .catch((erro: any) => {
         let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
@@ -125,10 +125,6 @@ goToResetSenhaPage(){
 
 goToTabsPage(){
   this.navCtrl.push(TabsPage)
-}
-
-goToLoginEmpresaPage(){
-  this.navCtrl.push(LoginEmpresaPage)
 }
 
 }
