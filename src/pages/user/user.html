@@ -29,22 +29,19 @@
               <ion-icon name="folder-open" item-start color="primary"></ion-icon>
               <p class="titulo-menu">Pastas</p>
             </button>
-        
             <button ion-item>
               <ion-icon name="cloud-upload" item-start color="primary"></ion-icon>
               <p class="titulo-menu">Upload de Foto Perfil</p>
             </button> 
-            <button ion-item>
+            <button ion-item (click)="configuracoes()">
                 <ion-icon name="settings" item-start color="primary"></ion-icon>
                 <p class="titulo-menu">Configurações de Conta</p>
               </button>  
-              <button ion-item>
+              <button ion-item (click)="Sair()">
               <ion-icon name="log-out" item-start color="primary"></ion-icon>
               <p class="titulo-menu" (click)="Sair()" >Sair</p>
             </button>
-            <button ion-button block  (click)="Sair()">Sair</button>
           </ion-list>
       </ion-card>
   </div>
-  <div *ngIf="user!=null">Teste</div>
 </ion-content>

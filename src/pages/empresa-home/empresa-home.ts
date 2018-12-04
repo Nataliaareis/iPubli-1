@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ToastController, LoadingController } from 'ionic-angular';
 import { EmpresaInfluencersPage } from '../empresa-influencers/empresa-influencers'
@@ -25,15 +25,46 @@ import { VisionUploadPage } from '../vision-upload/vision-upload';
   templateUrl: 'empresa-home.html',
 })
 export class EmpresaHomePage {
+  public userid: string;
+  //public userdata: AngularFireObject <any>;
+  public name: string;
+  public type: string;
+  public userdata = {};
+  public user: any;
+  public userProfile: firebase.database.Reference;
+  public currentUser: User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afauth: AngularFireAuth,
     public firebaseauth: AngularFireAuth, public toastCtrl: ToastController) {
+
+      afauth.authState.subscribe(user => {
+        if (user){
+          this.userid = user.uid
+        }
+        
+        firebaseauth.user.subscribe((data => {
+          this.user = data;
+        }));
+      })
+      
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          this.currentUser = user;
+        }
+      });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EmpresaHomePage');
+    this.firebaseauth.authState.subscribe(user => {
+      if (user){
+        const userdataref: firebase.database.Reference = firebase.database().ref(`/signup-empresa/${this.user.uid}`);
+        userdataref.on('value', userSnapshot => {
+          this.userdata = userSnapshot.val();
+        })
+      }
+    })   
   }
-
+  
   goToEmpresaInfluencersPage(){
     this.navCtrl.push(EmpresaInfluencersPage)
   }

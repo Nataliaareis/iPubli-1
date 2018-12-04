@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar  color=white>
     <ion-title>
-      Bem-vindo!
+      Olá, Empresa!
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,14 +13,7 @@
 </div>
 
   <div *ngIf="user != null">
-    <div *ngIf="userdata?.type=='usuário'">
-    <h3>Bem vindo: {{ user.email }} {{userdata?.type}}</h3>
-    <br>
-    <br>
-    </div>
-    <button ion-button block  (click)="Sair()">Sair</button>
-    <button ion-button block  (click)="goToTabsPage()">Voltar</button>
-    <button ion-button block  (click)="goToTabsPage()">Editar o Perfil</button>
+    {{goToHomeEmpresaPage()}}
   </div>
   
   <div *ngIf="user == null">

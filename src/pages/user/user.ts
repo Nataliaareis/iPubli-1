@@ -8,6 +8,9 @@ import firebase, { User } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import { LoginPage } from '../login/login';
+import { FavoritosPastaPage } from '../favoritos-pasta/favoritos-pasta';
+import { FavoritosPage } from '../favoritos/favoritos';
+import { TelaConfiguracoesPage } from '../tela-configuracoes/tela-configuracoes';
 
 @IonicPage()
 @Component({
@@ -78,6 +81,11 @@ export class UserPage {
   }
 
   abrirPastas(){
+    this.navCtrl.push(FavoritosPage)
   }
   
+  configuracoes(){
+    this.navCtrl.push(TelaConfiguracoesPage)
+  }
+
 }

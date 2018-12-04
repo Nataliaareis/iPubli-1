@@ -13,14 +13,7 @@
     </div>
   
   <div *ngIf="user != null">
-    <div *ngIf="userdata?.type=='usuário'">
-    <h3>Bem vindo: {{ user.email }} {{userdata?.type}}</h3>
-    <br>
-    <br>
-    </div>
-    <button ion-button block  (click)="Sair()">Sair</button>
-    <button ion-button block  (click)="goToTabsPage()">Voltar</button>
-    <button ion-button block  (click)="goToTabsPage()">Editar o Perfil</button>
+      {{goToTabsPage()}}
   </div>
   
   <div *ngIf="user == null">
@@ -51,7 +44,7 @@
     </button>
 
     <button ion-button full outline color = "white"
-      (click)="goToLoginEmpresaPage()"> Sou Empresa
+      (click)="goToLoginEmpresaPage()">Sou Empresa
     </button>
 
   </div>

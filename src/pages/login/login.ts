@@ -27,13 +27,13 @@ constructor(public navCtrl: NavController,
               public firebaseauth: AngularFireAuth,
               public db: AngularFireDatabase,
               public loadingCtrl: LoadingController) {
-      this.presentLoadingDefault();
+      //this.presentLoadingDefault();
       firebaseauth.user.subscribe((data => {
         this.user = data;
       }));
       
   }
-
+  /*
   public presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
@@ -45,7 +45,8 @@ constructor(public navCtrl: NavController,
       loading.dismiss();
     }, 4000);
   }
-
+  */
+ 
   ionViewDidLoad() {
     this.firebaseauth.authState.subscribe(user => {
       if (user){
@@ -124,7 +125,7 @@ goToResetSenhaPage(){
 }
 
 goToTabsPage(){
-  this.navCtrl.push(TabsPage)
+  this.navCtrl.setRoot(TabsPage);
 }
 
 goToLoginEmpresaPage(){
