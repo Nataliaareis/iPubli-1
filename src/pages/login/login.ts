@@ -19,6 +19,7 @@ import 'firebase/database';
 })
 export class LoginPage {
   public user: any;
+  public flag: any; 
   @ViewChild('usuario') email;
   @ViewChild('senha') password;
   public userdata: any;
@@ -33,6 +34,7 @@ constructor(public navCtrl: NavController,
       }));
       
   }
+
   /*
   public presentLoadingDefault() {
     let loading = this.loadingCtrl.create({
@@ -62,7 +64,8 @@ public LoginComEmail(): void {
     this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value , this.password.value)
       .then(() => {
         this.exibirToast('Login efetuado com sucesso');
-        this.navCtrl.setRoot(TabsPage);
+        this.flag = 1;
+        this.navCtrl.push(TabsPage);
       })
       .catch((erro: any) => {
         let toast = this.toastCtrl.create({ duration: 3000, position: 'bottom' });
@@ -86,9 +89,9 @@ public cadastrarUsuario(): void {
 
       toast.setMessage('Usuário criado com sucesso.');
       toast.present();
-
-      this.navCtrl.setRoot(CadastroEscolhaPage); 
-
+      this.flag = 2;
+      this.navCtrl.push(CadastroEscolhaPage); 
+      
     })
     .catch((erro: any) => {
       if (erro.code  == 'auth/email-already-in-use') {
@@ -130,6 +133,17 @@ goToTabsPage(){
 
 goToLoginEmpresaPage(){
   this.navCtrl.push(LoginEmpresaPage)
+}
+
+public verificarCadastro(): void {
+  
+  if (this.flag == 1) {
+    this.navCtrl.setRoot(TabsPage);
+  } else if (this.flag == 2) {
+    this.navCtrl.setRoot(CadastroEscolhaPage); 
+  }
+  //else 
+  //  this.navCtrl.push(LoginPage); 
 }
 
 }
