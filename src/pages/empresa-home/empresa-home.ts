@@ -11,6 +11,7 @@ import 'firebase/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginPage } from '../login/login';
 import { VisionUploadPage } from '../vision-upload/vision-upload';
+import { LoginEmpresaPage } from '../login-empresa/login-empresa';
 
 /**
  * Generated class for the EmpresaHomePage page.
@@ -92,7 +93,7 @@ export class EmpresaHomePage {
     this.firebaseauth.auth.signOut()
     .then(() => {
       this.exibirToast('Você saiu');
-      this.navCtrl.parent.parent.setRoot(LoginPage);
+      this.navCtrl.setRoot(LoginPage);
     })
     .catch((erro: any) => {
       this.exibirToast(erro);

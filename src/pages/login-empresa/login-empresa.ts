@@ -122,6 +122,7 @@ private exibirToast(mensagem: string): void {
 goToResetSenhaPage(){
   this.navCtrl.push(ResetSenhaPage)
 }
+
 goToHomeEmpresaPage(){
   this.navCtrl.setRoot(EmpresaHomePage);
 }

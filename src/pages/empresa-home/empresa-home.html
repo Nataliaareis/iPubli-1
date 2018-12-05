@@ -12,12 +12,20 @@
 
 </ion-header>
 
-
 <ion-content padding class="card-background-page">
-    <ion-content class="card-background-page">
-        <div class="Acessos">
+    Olá, {{userdata.name}}.
+    <br>
+    Você teve 2 acessos hoje.
+    <br>
+    Seu influencer relacionado mais seguido é Elizabeth Chambers.
+    <br>  
+  
+  <ion-content class="card-background-page">
+      <!--  
+      <div class="Acessos">
           <img src="assets/imgs/Empresa/acesso.png"/>
         </div>
+      -->
         <button ion-button (click) = "goToEmpresaInfluencersPage()" icon-start class="btnHome">
           <ion-icon name="star-outline"></ion-icon>
           Influencers
