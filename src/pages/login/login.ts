@@ -142,8 +142,8 @@ public verificarCadastro(): void {
   } else if (this.flag == 2) {
     this.navCtrl.setRoot(CadastroEscolhaPage); 
   }
-  //else 
-  //  this.navCtrl.push(LoginPage); 
+  else 
+    this.navCtrl.setRoot(TabsPage); 
 }
 
 }
