@@ -19,10 +19,10 @@ export class MyApp {
       // statusBar.styleDefault();
       //set top status bar overlay
      // let status bar overlay webview
-    this.statusBar.overlaysWebView(true);
+    //this.statusBar.overlaysWebView(true);
 
     // set status bar to white
-    this.statusBar.backgroundColorByHexString('#ffffff');
+    this.statusBar.backgroundColorByHexString('#000');
       splashScreen.hide();
     });
   }
