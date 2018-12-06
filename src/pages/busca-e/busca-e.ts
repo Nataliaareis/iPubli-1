@@ -39,6 +39,7 @@ export class BuscaEPage {
 
   getAllEmpresas(){
     this.empresas = [
+      "Dior",
       "eZ",
       "Lojas Luz",
       "Alpha",
